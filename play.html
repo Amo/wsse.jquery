@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Play with wsse.jquery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8">
+    </head>
+    <body>
+    
+        <form name="api-request">
+                <label for="user">Username</label>
+                <input type="text" id="user-input" name="user" value="amaury@seetch.com" />
+                <label for="password">Password</label>
+                <input type="password"  id="password-input" name="password" value="" />
+                <label for="url">Url</label>
+                <input type="text" name="url"  id="url-input" value="https://seetch.com/api/albums" />
+            <input type="submit" value="test" />
+        </form>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script type="text/javascript" src="./draft.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("form").submit(function(e){
+                    e.preventDefault();
+                    goWsse(
+                        $("#user-input").val(),
+                        $("#password-input").val(),
+                        $("#url-input").val()
+                    );
+                });
+            });
+        </script>
+    </body>
